@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Joanna Łupierz - Salon Fryzjerski</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav>
+        <div class="nav-header">
+            <div class="logo">
+                <h1>Joanna</h1>
+                <h1>Łupierz</h1>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#time-table">Godziny otwarcia</a></li>
+            </ul>
+            <button class="show-nav-button" onclick="toggleNav()">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Piękno w perfekcyjnej formie</h1>
+            <p class="hero-subtitle">Indywidualne podejście, najwyższa jakość</p>
+            <p class="hero-description">Precyzyjne cięcia, koloryzacja i pielęgnacja premium.</p>
+
+            <img src="nozyczki1.png" alt="Nożyczki fryzjerskie" class="hero-image">
+
+            <hr/>
+            <div class="hero-trust">
+                ★★★★★ 4.9 / 5<br>
+                <span>Laureat Orłów Fryzjerstwa 2023–2024</span>
+            </div>
+
+             <div class="hero-actions">
+                <a href="https://booksy.com" target="_blank" class="booksy-button">Umów wizytę przez Booksy</a>
+                <a href="tel:+48123456789" class="phone-sticker">
+             <img src="phone-call.png" alt="Zadzwoń" class="phone-sticker-icon">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="makeover" id="makeover">
+    <h2 class="section-title">Metamorfozy</h2>
+    <div class="makeover-grid">
+        <div class="makeover-item">
+            <img src="metamorfoza1.jpg" alt="Metamorfoza 1">
+            <div class="makeover-label">Przed & Po</div>
+        </div>
+        <div class="makeover-item">
+            <img src="metamorfoza2.jpg" alt="Metamorfoza 2">
+            <div class="makeover-label">Koloryzacja Premium</div>
+        </div>
+        <div class="makeover-item">
+            <img src="metamorfoza3.jpg" alt="Metamorfoza 3">
+            <div class="makeover-label">Cięcie i Stylizacja</div>
+        </div>
+    </div>
+</section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Cennik Usług</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div>
+                    <div class="service-header">
+                        <h3 class="service-name">Strzyżenie damskie</h3>
+                        <span class="service-price">od 120 zł</span>
+                    </div>
+                    <p class="service-description">Mycie, personalizowane cięcie, modelowanie oraz profesjonalne wykończenie fryzury.</p>
+                </div>
+                <span class="time">60 - 90 min</span>
+            </div>
+
+            <div class="service-item">
+                <div>
+                    <div class="service-header">
+                        <h3 class="service-name">Strzyżenie męskie</h3>
+                        <span class="service-price">60 - 80 zł</span>
+                    </div>
+                    <p class="service-description">Klasyczne lub nowoczesne cięcie maszynką i nożyczkami z pielęgnacją skóry głowy.</p>
+                </div>
+                <span class="time">30 - 45 min</span>
+            </div>
+
+            <div class="service-item">
+                <div>
+                    <div class="service-header">
+                        <h3 class="service-name">Koloryzacja Premium</h3>
+                        <span class="service-price">od 250 zł</span>
+                    </div>
+                    <p class="service-description">Jednolity kolor lub refleksy z użyciem delikatnych farb bez amoniaku.</p>
+                </div>
+                <span class="time">120 - 180 min</span>
+            </div>
+
+            <div class="service-item">
+                <div>
+                    <div class="service-header">
+                        <h3 class="service-name">Baleyage / Ombre</h3>
+                        <span class="service-price">od 350 zł</span>
+                    </div>
+                    <p class="service-description">Zaawansowane techniki rozjaśniania z tonowaniem dla uzyskania naturalnego efektu.</p>
+                </div>
+                <span class="time">180 - 240 min</span>
+            </div>
+
+            <div class="service-item">
+                <div>
+                    <div class="service-header">
+                        <h3 class="service-name">Rytuał Pielęgnacyjny</h3>
+                        <span class="service-price">90 - 150 zł</span>
+                    </div>
+                    <p class="service-description">Głęboka regeneracja włosa dobrana do jego porowatości (sauna lub podczerwień).</p>
+                </div>
+                <span class="time">45 min</span>
+            </div>
+
+            <div class="service-item">
+                <div>
+                    <div class="service-header">
+                        <h3 class="service-name">Fryzura okolicznościowa</h3>
+                        <span class="service-price">150 - 250 zł</span>
+                    </div>
+                    <p class="service-description">Upięcia wieczorowe, ślubne oraz stylizacje na wielkie wyjścia.</p>
+                </div>
+                <span class="time">60 - 120 min</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="time-table" id="time-table">
+        <h2 class="section-title">Godziny otwarcia</h2>
+        <div class="time-entry">
+            <p><strong>Wtorek - Piątek:</strong> 9:00 - 18:00</p>
+            <p><strong>Sobota:</strong> 9:00 - 14:00</p>
+            <p><strong>Poniedziałek i Niedziela:</strong> Zamknięte</p>
+        </div>
+    </section>
+
+   <section class="location-section">
+    <h2 class="section-title">Gdzie mnie szukać</h2>
+    <div class="map-wrapper">
+        <div class="map-details">
+            <p><strong>Adres:</strong> ul. 1 Maja 39,  Rsinowice</p>
+            <p><strong>Telefon:</strong> +48 123 456 789</p>
+        </div>
+         <a href="https://www.google.com/maps/dir/?api=1&destination=Salon+Fryzjerski+Joanna+Lubliniec+Niegolewskich+3" 
+               target="_blank" 
+               class="directions-button">
+                Wyznacz trasę
+            </a>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d340.5501190684521!2d18.772034036613483!3d50.64501897088867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spl!2spl!4v1768266917895!5m2!1spl!2spl "
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+    <footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h2>Joanna</h2>
+            <h2>Łupierz</h2>
+        </div>
+        
+        <div class="footer-nav">
+            <a href="#hero">Home</a>
+            <a href="#services">Usługi</a>
+            <a href="#time-table">Godziny otwarcia</a>
+            <a href="https://booksy.com" target="_blank">Rezerwacja Online</a>
+        </div>
+
+        <div class="footer-socials">
+            <p>Obserwuj mnie:</p>
+            <div class="social-icons">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        &copy; 2024 Joanna Łupierz. Wszystkie prawa zastrzeżone.
+    </div>
+</footer>
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        let currentSlideIndex = 0;
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const slidesWrapper = document.querySelector('.slides-wrapper');
+            if (index >= slides.length) currentSlideIndex = 0;
+            else if (index < 0) currentSlideIndex = slides.length - 1;
+            else currentSlideIndex = index;
+
+            slidesWrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlideIndex));
+        }
+        function moveSlide(direction) { showSlide(currentSlideIndex + direction); }
+        function currentSlide(index) { showSlide(index - 1); }
+        document.addEventListener('DOMContentLoaded', () => showSlide(0));
+    </script>
+</body>
+</html>
