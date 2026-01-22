@@ -1,33 +1,43 @@
 :root {
-    --pure-white: #FFFFFF;
-    --soft-ivory: #F7F5F2;
-    --pearl-gray: #EDEDED;
-    --deep-black: #0F0F0F;
-    --charcoal: #2B2B2B;
-    --warm-gray: #6F6F6F;
-    --gold: #D4AF37;
-    --soft-gold: #E6C77A;
+    /* Tła - od najciemniejszego do akcentowego */
+    --deep-night: #0A0A0A;      /* Główne tło, głębsze niż standardowa czerń */
+    --rich-charcoal: #171717;   /* Tło sekcji, kart lub przycisków */
+    --gunmetal: #242424;        /* Subtelne obramowania i podziały */
+--pure-white: #FFFFFF;      /* Tylko dla kontrastowych tekstów na złocie */
+    /* Tekst i jasne akcenty */
+    --silver-mist: #E0E0E0;     /* Główny tekst (nieco złamany, by nie raził) */
+    --muted-gray: #A0A0A0;      /* Teksty pomocnicze, opisy */
+    
+    /* Złoto i detale - bardziej stonowane, by pasowały do mroku */
+    --royal-gold: #C5A059;      /* Szlachetne, matowe złoto */
+    --dark-gold: #8E6F3E;       /* Cień złota lub akcenty hover */
+    --bronze-glow: #4A3F2C; 
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 
 * {
     box-sizing: border-box;
+    font-family: 'Lora', serif;
 }
+
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: var(--pure-white);
-    color: var(--charcoal);
+    color: var(--rich-charcoal);
     line-height: 1.6;
 }
 
 /* Nawigacja */
 nav {
-    background-color: var(--pure-white);
+    background-color: var(--deep-night);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid var(--pearl-gray);
+    border-bottom: 1px solid var(--gunmetal);
     padding: 10px 20px;
 }
 
@@ -40,7 +50,7 @@ nav {
 }
 
 .logo h1 {
-    color: var(--deep-black);
+    color: var(--muted-gray);
     margin: 0;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -55,7 +65,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--charcoal);
+    color: var(--silver-mist);
     font-weight: 500;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -63,23 +73,24 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+    color: var(--royal-gold);
 }
 
 /* Hero Section */
 .hero {
-    background-color: var(--soft-ivory);
+    background-color: var(--silver-mist);
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 20px;
+    padding: 50px 20px;
+    color:#0A0A0A; /* Deep Black */
 }
 
 .hero-title {
     font-size: 3rem;
-    color: var(--deep-black);
+    color: var(--deep-night);
     font-weight: 300;
     margin-bottom: 20px;
 }
@@ -96,8 +107,8 @@ nav {
 }
 
 .booksy-button {
-    background-color: var(--gold);
-    color: var(--pure-white);
+    background-color: var(--rich-charcoal);
+    color: var(--pure-white); /* Ciemny tekst na złotym przycisku wygląda lepiej */
     padding: 16px 32px;
     border-radius: 4px;
     text-decoration: none;
@@ -107,9 +118,9 @@ nav {
 }
 
 .booksy-button:hover {
-    background-color: var(--soft-gold);
+ background-color: var(--muted-gray);
+    color: var(--pure-white);
 }
-
 /* Sekcje wspólne */
 .section-title {
     text-align: center;
@@ -117,19 +128,19 @@ nav {
     margin: 60px 0 40px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--deep-black);
+    color: var(--deep-night);
 }
 
 .makeover {
-    padding: 60px 20px;
-    background-color: #FFFFFF; /* Pure White */
+    padding: 20px 20px;
+    background-color: var(--pure-white); /* Twój beż #F5F5DC */
+    padding-bottom:60px;
 }
 
 .makeover-grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    /* Na desktopie: 3 kolumny obok siebie */
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
 }
@@ -168,7 +179,7 @@ nav {
 
 .location-section {
     padding: 60px 20px;
-    background-color: var(--hero-bg); /* Twój beż #F5F5DC */
+    background-color: var(--pure-white); /* Twój beż #F5F5DC */
     text-align: center;
 }
 
@@ -179,7 +190,6 @@ nav {
 
 .map-details {
     margin-bottom: 20px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
     color: var(--black);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -197,7 +207,7 @@ nav {
 .map-container iframe {
     /* Zaokrąglenie rogów mapy dla nowoczesnego looku */
     border-radius: 2px;
-    filter: grayscale(0.2) contrast(1.1); /* Delikatnie stonowana mapa lepiej pasuje do stylu glamour */
+    filter: grayscale(1) contrast(1.02) brightness(1.15);
 }
 
 /* Responsywność dla telefonów */
@@ -225,8 +235,9 @@ nav {
 
 /* Grid Usług */
 .services {
-    background-color: var(--soft-ivory);
+    background-color: var(--silver-mist);
     padding: 60px 20px;
+    margin-bottom:130px;
 }
 
 .services-grid {
@@ -250,30 +261,40 @@ nav {
 
 .service-name {
     font-size: 1.1rem;
-    color: var(--deep-black);
+    color: var(--deep-night);
     margin: 0;
 }
 
 .service-price {
-    color: var(--gold);
+    color: var(--royal-gold);
     font-weight: bold;
 }
 
 .service-description {
-    color: var(--warm-gray);
+    color: var(--rich-charcoal);
     font-size: 0.9rem;
     margin: 15px 0;
 }
 
 /* Godziny Otwarcia */
 .time-table {
-    padding: 60px 20px;
+    position: relative;
+    margin: 40px  auto;
+    height: fit-content;
+    width: fit-content;
+    padding: 40px 70px;
     text-align: center;
+    border: 3px solid var(--deep-night);
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.326);
+    outline: 1px solid var(--gunmetal);
+    outline-offset: 15px;
+   
+
 }
 
 .time-entry {
     display: inline-block;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--gunmetal);
     padding: 30px 60px;
     background-color: var(--soft-ivory);
 }
@@ -285,7 +306,7 @@ nav {
 
     border: none;
 
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--silver-mist);
 
     font-size: 28px;
 
@@ -300,9 +321,9 @@ nav {
     position: fixed; /* Przyklejony do ekranu */
     bottom: 30px;    /* Odległość od dołu */
     right: 30px;     /* Odległość od prawej */
-    width: 50px;     /* Rozsądny rozmiar */
-    height: 50px;
-    background-color: #D4AF37; /* Champagne Gold */
+    width: 80px;     /* Rozsądny rozmiar */
+    height: 80px;
+    background-color:var(--pure-white); /* Champagne Gold */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -314,7 +335,7 @@ nav {
 }
 
 .phone-sticker:hover {
-    background-color: #E6C77A; /* Soft Gold */
+    background-color: #848484; /* Soft Gold */
     transform: scale(1.1);    /* Delikatne powiększenie przy najechaniu */
 }
 
@@ -332,7 +353,6 @@ footer {
     border-top: 2px outset var(--gold); /* Styl jak w Twoim nav */
     padding: 40px 20px 20px;
     margin-top: 60px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 .footer-content {
@@ -411,7 +431,8 @@ footer {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 25px;
-    background-color: var(--gold);
+    background-color: var(--silver-mist);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     color: var(--black);
     text-decoration: none;
     font-weight: bold;
@@ -427,7 +448,7 @@ footer {
     background-color: var(--white);
     border: 2px solid var(--gold);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .map-details p {
@@ -435,7 +456,7 @@ footer {
 }
 .map-container iframe {
     /* Delikatne ocieplenie kolorów mapy, by pasowały do beżu */
-    filter: sepia(20%) contrast(1.1) brightness(0.95);
+    filter: grayscale(1) contrast(1.02) brightness(1.15);
     border-radius: 2px;
 }
 /* Responsywność */
@@ -458,15 +479,23 @@ footer {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .logo h1 { font-size: 1.5rem; }
+    .phone-sticker {
+        bottom: 40px;
+        right: 20px;
+        width: 65px;
+        height: 65px;
+    }
+
     .hero-title { font-size: 2rem; }
     .nav-links {
         display: none;
         position: absolute;
         top: 100%; left: 0; right: 0;
-        background: var(--pure-white);
+        background: var(--deep-night);
         flex-direction: column;
         padding: 20px;
-        text-align: center;
+        text-align: center; 
         border-bottom: 1px solid var(--pearl-gray);
     }
     .nav-links.active { display: flex; }
