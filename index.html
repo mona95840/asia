@@ -205,6 +205,41 @@
             navLinks.classList.toggle('active');
         }
 
+        // Hide nav on scroll down, show on scroll up (desktop & mobile)
+        (function() {
+            let lastScrollY = window.scrollY;
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const threshold = 10; // minimal movement to trigger
+
+            function onScroll() {
+                const currentY = window.scrollY;
+                const diff = currentY - lastScrollY;
+
+                // Always show at top
+                if (currentY <= 0) {
+                    nav.classList.remove('nav-hidden');
+                    lastScrollY = currentY;
+                    return;
+                }
+
+                // If mobile menu is open, don't hide nav to avoid UX issues
+                const menuOpen = navLinks && navLinks.classList.contains('active');
+
+                if (!menuOpen && diff > threshold) {
+                    // scrolling down
+                    nav.classList.add('nav-hidden');
+                } else if (diff < -threshold) {
+                    // scrolling up
+                    nav.classList.remove('nav-hidden');
+                }
+
+                lastScrollY = currentY;
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+
         let currentSlideIndex = 0;
         function showSlide(index) {
             const slides = document.querySelectorAll('.slide');
@@ -214,7 +249,9 @@
             else if (index < 0) currentSlideIndex = slides.length - 1;
             else currentSlideIndex = index;
 
-            slidesWrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            if (slidesWrapper) {
+                slidesWrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            }
             dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlideIndex));
         }
         function moveSlide(direction) { showSlide(currentSlideIndex + direction); }

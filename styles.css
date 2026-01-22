@@ -39,6 +39,12 @@ nav {
     z-index: 100;
     border-bottom: 1px solid var(--gunmetal);
     padding: 10px 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Hidden state for navigation on scroll */
+.nav-hidden {
+    transform: translateY(-100%);
 }
 
 .nav-header {
