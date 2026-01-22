@@ -12,13 +12,6 @@
     --royal-gold: #C5A059;      /* Szlachetne, matowe złoto */
     --dark-gold: #8E6F3E;       /* Cień złota lub akcenty hover */
     --bronze-glow: #4A3F2C; 
-
-    /* Dodatkowe zmienne używane w stylach */
-    --gold: #C5A059;           /* Alias dla złota */
-    --white: #FFFFFF;          /* Alias dla bieli */
-    --pearl-gray: #EDEDED;     /* Delikatna szarość do obramowań */
-    --soft-ivory: #F5F5DC;     /* Jasny beż do tła */
-    --black: #0A0A0A;          /* Głęboka czerń dla tekstów */
 }
 
 
