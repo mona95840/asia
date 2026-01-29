@@ -205,6 +205,20 @@
             navLinks.classList.toggle('active');
         }
 
+        // Zamknij navbar gdy kliknięcie poza nim
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const nav = document.querySelector('nav');
+            
+            // Jeśli navbar jest otwarty
+            if (navLinks.classList.contains('active')) {
+                // Jeśli kliknięcie NIE jest na navbarze
+                if (!nav.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+
         // Hide nav on scroll down, show on scroll up (desktop & mobile)
         (function() {
             let lastScrollY = window.scrollY;
